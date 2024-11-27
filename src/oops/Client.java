@@ -14,15 +14,14 @@ class Client {
         bk.deposit(123.89);
         bk.getBalance();
         System.out.println("********************************************************");
-
-        System.out.println("Owner Name : " + bk.getOwnerName());
+        System.out.println("\033[0;1m" + "Owner Name : " + bk.getOwnerName());
         System.out.println("********************************************************");
 
 
         ArrayList<String> transactions = bk.getTransactionsHistory();
         System.out.println("********************************************************");
         System.out.println(
-                "\tTransactions history :"
+                "\033[0;1m" +  "\tTransactions history :"
         );
         transactions.forEach((transaction)-> System.out.println("\t\t"+transaction));
         System.out.println("********************************************************");

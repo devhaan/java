@@ -1,18 +1,27 @@
 package oops;
+import java.util.ArrayList;
 
 public class BankAccount {
     private double balance = 0.0;
     private String ownerName;
+    public ArrayList<String> Transactions;
 
-//    public BankAccount(String ownerName, double initialBalance) {
-//        this.ownerName = ownerName;
-//        this.balance = initialBalance;
-//    }
+    public BankAccount() {
+        //nothing
+        Transactions = new ArrayList<>();
+    }
+
+    public BankAccount(String ownerName, double initialBalance) {
+        this.ownerName = ownerName;
+        this.balance = initialBalance;
+        Transactions = new ArrayList<>();
+    }
 
     // Method to deposit money into the account
     void deposit(double amount) {
         if(amount > 0) {
             balance += amount;
+            Transactions.add("Deposited " + amount);
         } else {
             System.out.println("Amount to deposit must be positive.");
         }
@@ -22,6 +31,7 @@ public class BankAccount {
         if(amount > 0) {
             if(balance >= amount) {
                 balance -= amount;
+                Transactions.add("Withdrew " + amount);
                 System.out.println("Withdrawal of " + amount + " successful.");
             } else {
                 System.out.println("Insufficient Funds");
@@ -49,4 +59,7 @@ public class BankAccount {
         return ownerName;
     }
 
+    public ArrayList<String> getTransactions() {
+        return Transactions;
+    }
 }

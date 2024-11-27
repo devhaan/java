@@ -11,6 +11,6 @@ class Client {
         bk.withdraw(21);
         bk.deposit(123.89);
         bk.getBalance();
-        bk.getOwnerName();
+        System.out.println(bk.getOwnerName());
     }
 }

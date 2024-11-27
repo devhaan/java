@@ -15,7 +15,7 @@ class Client {
         bk.getBalance();
         System.out.println(bk.getOwnerName());
 
-        ArrayList<String> transactions = bk.getTransactions();
+        ArrayList<String> transactions = bk.getTransactionsHistory();
 
         transactions.forEach((transaction)-> System.out.println(transaction));
     }

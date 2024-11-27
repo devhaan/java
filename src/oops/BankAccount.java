@@ -59,7 +59,7 @@ public class BankAccount {
         return ownerName;
     }
 
-    public ArrayList<String> getTransactions() {
+    public ArrayList<String> getTransactionsHistory() {
         return Transactions;
     }
 }

@@ -2,11 +2,15 @@ package oops;
 
 class Client {
     public static void main(String[] args) {
-        BankAccount bk = new BankAccount("Jhon", 90);
+        BankAccount bk = new BankAccount();
+
+        bk.setBalance(21);
+        bk.setOwnerName("devendra");
 
         bk.deposit(20);
-        bk.withdraw(-110);
+        bk.withdraw(21);
         bk.deposit(123.89);
-        bk.balanceInAccount();
+        bk.getBalance();
+        bk.getOwnerName();
     }
 }

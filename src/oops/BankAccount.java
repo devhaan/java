@@ -1,13 +1,13 @@
 package oops;
 
 public class BankAccount {
-    double balance = 0.0;
-    String ownerName;
+    private double balance = 0.0;
+    private String ownerName;
 
-    public BankAccount(String ownerName, double initialBalance) {
-        this.ownerName = ownerName;
-        this.balance = initialBalance;
-    }
+//    public BankAccount(String ownerName, double initialBalance) {
+//        this.ownerName = ownerName;
+//        this.balance = initialBalance;
+//    }
 
     // Method to deposit money into the account
     void deposit(double amount) {
@@ -32,12 +32,21 @@ public class BankAccount {
     }
 
 
-    void balanceInAccount() {
+    void getBalance() {
         System.out.println("Current Balance: " + balance);
+    }
+
+    void setBalance(double newBalance) {
+        balance = newBalance;
+    }
+
+    void setOwnerName(String newOwnerName) {
+        ownerName = newOwnerName;
     }
 
     // Method to get the owner's name
     String getOwnerName() {
         return ownerName;
     }
+
 }

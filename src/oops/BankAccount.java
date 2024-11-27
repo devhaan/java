@@ -8,6 +8,8 @@ public class BankAccount {
 
     public BankAccount() {
         //nothing
+        balance = 0.0;
+        ownerName = "";
         Transactions = new ArrayList<>();
     }
 

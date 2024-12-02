@@ -7,7 +7,6 @@ public class BankAccount {
     public ArrayList<String> Transactions;
 
     public BankAccount() {
-        //nothing
         balance = 0.0;
         ownerName = "";
         Transactions = new ArrayList<>();

@@ -4,10 +4,9 @@ import java.util.ArrayList;
 
 class Client {
     public static void main(String[] args) {
-        BankAccount bk = new BankAccount();
+        BankAccount bk = new BankAccount("Devendra Mahor", 21);
 
-        bk.setBalance(21);
-        bk.setOwnerName("Devendra Mahor");
+
         System.out.println(bk.getOwnerName());
         bk.deposit(20);
         bk.withdraw(21);

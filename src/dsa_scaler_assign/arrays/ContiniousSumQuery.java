@@ -8,12 +8,12 @@ public class ContiniousSumQuery {
             for( int i = 0 ; i < B.size(); i++) {
                 int left = B.get(i).get(0),
                         right = B.get(i).get(1),
-                        ammount = B.get(i).get(2);
+                        amount = B.get(i).get(2);
 
-                resultContinuousSum.set(left-1, resultContinuousSum.get(left-1) + ammount);
+                resultContinuousSum.set(left-1, resultContinuousSum.get(left-1) + amount);
 
                 if( right < A) {
-                    resultContinuousSum.set(right, resultContinuousSum.get(right) + (-1 * ammount));
+                    resultContinuousSum.set(right, resultContinuousSum.get(right) + (-1 * amount));
                 }
 
             }

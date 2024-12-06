@@ -6,11 +6,20 @@ public class Member extends User {
 
     public Member() {
         super();
+        borrowedBooksCount = 0;
+    }
+
+    public Member(String name, String contactInfo) {
+        super(name, contactInfo);
+    }
+
+    public Member(User user) {
+        super(user);
     }
 
     @Override
     public boolean canBorrowBooks() {
-        return borrowedBooksCount < MAX_BORROW_LIMIT ? true : false;
+        return borrowedBooksCount < MAX_BORROW_LIMIT;
     }
 
     @Override

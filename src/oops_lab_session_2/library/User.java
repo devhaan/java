@@ -15,7 +15,7 @@ public class User {
     }
 
     public User(User user) {
-        this.userId = user.userId;
+        this.userId = generateUniqueId();
         this.name = user.name;
         this.contactInfo = user.contactInfo;
     }

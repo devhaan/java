@@ -1,4 +1,4 @@
-package oops;
+package oops_lab_session_1;
 import java.util.ArrayList;
 
 public class BankAccount {

@@ -24,6 +24,6 @@ public class Member extends User {
 
     @Override
     public void displayDashboard() {
-        System.out.println(" Member 's Dashboard and Books Borrowed: " + borrowedBooksCount);
+        System.out.println("Member's Dashboard" + "\nName: " + this.getName() + "\nContact: " + this.getContactInfo() + "and Books Borrowed: " + borrowedBooksCount);
     }
 }

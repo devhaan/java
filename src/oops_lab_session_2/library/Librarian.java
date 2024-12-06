@@ -26,7 +26,8 @@ public class Librarian extends User {
 
     @Override
     public void displayDashboard() {
-        System.out.println(" Librarian Dashboard and the employeeNumber ");
+        System.out.println("Librarian's Dashboard" + "\nName: " + this.getName() + "\nContact: " + this.getContactInfo() + "and Employee no : " + employeeNumber);
+
     }
     public void addNewBook() {
     }

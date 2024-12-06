@@ -1,7 +1,5 @@
 package oops_lab_session_2.library;
 
-import java.util.UUID;
-
 // Marked User as abstract
 public abstract class User {
     String userId, name, contactInfo;
@@ -19,6 +17,13 @@ public abstract class User {
         this.userId = generateUniqueId();
         this.name = user.name;
         this.contactInfo = user.contactInfo;
+    }
+
+    public abstract void displayDashboard();
+    public abstract boolean canBorrowBooks();
+
+    public String getUserId() {
+        return userId;
     }
 
     public String getName() {
@@ -41,7 +46,4 @@ public abstract class User {
         return "0";
     }
 
-
-    public abstract void displayDashboard();
-    public abstract boolean canBorrowBooks();
 }

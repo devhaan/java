@@ -6,7 +6,7 @@ public class Librarian extends User {
 
     @Override
     public boolean canBorrowBooks() {
-        return borrowedBooksCount < MAX_BORROW_LIMIT ? true : false;
+        return true;
     }
 
     @Override

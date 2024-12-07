@@ -19,11 +19,29 @@ public class Member extends User {
 
     @Override
     public boolean canBorrowBooks() {
+        System.out.println(
+                borrowedBooksCount < MAX_BORROW_LIMIT
+        );
+
         return borrowedBooksCount < MAX_BORROW_LIMIT;
     }
 
     @Override
-    public void displayDashboard() {
-        System.out.println("Member's Dashboard" + "\nName: " + this.getName() + "\nContact: " + this.getContactInfo() + "and Books Borrowed: " + borrowedBooksCount);
+    public void returnBook() {
+        borrowedBooksCount--;
     }
+
+    public void borrowBook() {
+        borrowedBooksCount++;
+    }
+
+    @Override
+    public void displayDashboard() {
+        System.out.println("Member's Dashboard" + "\nName: " + this.getName() + "\nContact: " + this.getContactInfo() + " and Books Borrowed: " + borrowedBooksCount);
+    }
+
+    public void displayBorrowedBooksCount(){
+        System.out.println(borrowedBooksCount);
+    }
+
 }

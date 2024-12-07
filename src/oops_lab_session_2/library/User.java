@@ -22,6 +22,9 @@ public abstract class User {
 
     public abstract void displayDashboard();
     public abstract boolean canBorrowBooks();
+    public abstract void returnBook();
+    public abstract void borrowBook();
+    public abstract void displayBorrowedBooksCount();
 
 
     public String getUserId() {

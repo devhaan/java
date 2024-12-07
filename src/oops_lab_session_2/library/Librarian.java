@@ -25,6 +25,9 @@ public class Librarian extends User {
     }
 
     @Override
+    public void returnBook() {}
+
+    @Override
     public void displayDashboard() {
         System.out.println("Librarian's Dashboard" + "\nName: " + this.getName() + "\nContact: " + this.getContactInfo() + "and Employee no : " + employeeNumber);
 
@@ -33,5 +36,15 @@ public class Librarian extends User {
     }
 
     public void removeBook() {
+    }
+
+    @Override
+    public void borrowBook() {
+
+    }
+
+    @Override
+    public void displayBorrowedBooksCount() {
+
     }
 }

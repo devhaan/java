@@ -28,6 +28,10 @@ public abstract class Book implements Lendable{
     public boolean lend(User user) {
         if(isAvailable && user.canBorrowBooks()) {
             user.borrowBook();
+            if( user instanceof Member) {
+                Member member = (Member) user;
+                member.bookLendedMap.put(this.isbn, this.title);
+            }
             isAvailable = false;
             return true;
         }
@@ -37,6 +41,10 @@ public abstract class Book implements Lendable{
     @Override
     public void returnBook(User user) {
         isAvailable = true;
+        if( user instanceof Member) {
+            Member member = (Member) user;
+            member.bookLendedMap.remove(this.isbn);
+        }
         user.returnBook();
     }
 

@@ -93,6 +93,8 @@ public class LibraryManagementSystem {
         lms.displayBookDetails();
         lms.displayUserDetails();
 
+
+        //test max limit for borrow
         if(book1.lend(user1)){
             System.out.println("Book lent successfully");
         }
@@ -119,6 +121,15 @@ public class LibraryManagementSystem {
         }
 
         user1.displayBorrowedBooksCount();
+
+        if( user1 instanceof Member){
+            Member member = (Member) user1;
+
+                System.out.println(member.bookLendedMap);
+        }
+
+        Book book = lms.searchBook("Secret Science");
+        System.out.println(book.title);
 
 
 

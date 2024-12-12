@@ -1,8 +1,11 @@
 package oops_lab_session_2.library;
 
+import java.util.HashMap;
+
 public class Member extends User {
     int borrowedBooksCount;
     static final int MAX_BORROW_LIMIT = 5;
+    public  HashMap<String, String> bookLendedMap;
 
     public Member() {
         super();

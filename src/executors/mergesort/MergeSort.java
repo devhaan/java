@@ -15,7 +15,7 @@ public class MergeSort implements Callable<List<Integer>> {
 
         public MergeSort(List<Integer> unsortedArray, ExecutorService executorService) {
             this.unsortedArray = unsortedArray;
-            this.executorService= executorService;
+                this.executorService= executorService;
 
         }
 

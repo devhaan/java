@@ -1,6 +1,6 @@
 package lab_session_3_e_commerce;
 
-public class Order {
+public class Order implements  Comparable<Order>{
     String OrderID;
     boolean isExpress;
 
@@ -23,5 +23,15 @@ public class Order {
 
     public void setExpress(boolean express) {
         isExpress = express;
+    }
+
+    @Override
+    public int compareTo(Order o) {
+        if(this.isExpress == o.isExpress){
+            return this.OrderID.compareTo(o.OrderID);
+        } if(this.isExpress){
+            return -1;
+        }
+        return 1;
     }
 }

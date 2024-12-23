@@ -1,9 +1,6 @@
 package lab_session_3_e_commerce;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.LinkedList;
+import java.util.*;
 
 public class Client {
 
@@ -94,6 +91,40 @@ public class Client {
 
         for (Item item : recentlyVisited) {
             System.out.println(item.getName());
+        }
+
+
+        System.out.println("---------------------------ORDERS------------------");
+
+
+        Order o1 = new Order("1", false);
+        Order o2 = new Order("2", false);
+        Order o3 = new Order("3", true);
+        Order o4 = new Order("4", false);
+        Order o5 = new Order("5", false);
+        Order o6 = new Order("6", true);
+
+        Order o7 = new Order("7", false);
+        Order o8 = new Order("8", true);
+
+
+        OrderProcessor orderProcessor = new OrderProcessor();
+
+        orderProcessor.addOrder(o1);
+        orderProcessor.addOrder(o2);
+        orderProcessor.addOrder(o3);
+        orderProcessor.addOrder(o4);
+        orderProcessor.addOrder(o5);
+        orderProcessor.addOrder(o6);
+        orderProcessor.addOrder(o7);
+        orderProcessor.addOrder(o8);
+
+//        orderProcessor.processOrder();
+
+        PriorityQueue<Order> pq = orderProcessor.getPq();
+
+        for(Order order : pq) {
+            System.out.println(order.getOrderID());
         }
 
 

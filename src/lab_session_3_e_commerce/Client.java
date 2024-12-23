@@ -23,5 +23,28 @@ public class Client {
         }
 
 
+        Inventory<Clothing> inventory = new Inventory<Clothing>();
+
+        Clothing c1 = new Clothing("3","t-shirt-1", 1200, 1, 20);
+        Clothing c2 = new Clothing("4","t-shirt-2", 1200, 1, 40);
+        inventory.addItem(c1);
+        inventory.addItem(c2);
+
+
+        System.out.println("________________________________________");
+        ArrayList<Clothing> clothingInventory = inventory.getAllItems();
+        for (Clothing clothing : clothingInventory) {
+            System.out.println(clothing.getName());
+        }
+
+        inventory.removeItem(c2);
+        System.out.println("________________________________________");
+        ArrayList<Clothing> clothingInventory2 = inventory.getAllItems();
+        for (Clothing clothing : clothingInventory2) {
+            System.out.println(clothing.getName());
+        }
+
+        System.out.println("________________________________________");
+        System.out.println(inventory.getItem(c1).getName());
     }
 }

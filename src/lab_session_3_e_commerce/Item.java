@@ -45,12 +45,10 @@ public class Item implements Comparable<Item> {
         this.quantity = quantity;
     }
 
+
+
     @Override
-    public int compareTo(Item i) {
-        if (!this.name.equals(i.name)) {
-            return this.name.compareTo(i.name);
-        } else {
-            return this.name.compareTo(i.name);
-        }
+    public int compareTo(Item other) {
+        return this.name.compareTo(other.getName());
     }
 }

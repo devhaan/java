@@ -1,5 +1,7 @@
 package lab_session_3_e_commerce;
 
+import java.util.ArrayList;
+
 public class Book extends Item {
     String author;
 
@@ -20,4 +22,5 @@ public class Book extends Item {
     public void setAuthor(String author) {
         this.author = author;
     }
+
 }

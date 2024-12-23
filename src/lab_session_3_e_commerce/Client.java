@@ -23,28 +23,57 @@ public class Client {
         }
 
 
-        Inventory<Clothing> inventory = new Inventory<Clothing>();
+        Inventory<Clothing> ClothingInventory = new Inventory<>();
 
         Clothing c1 = new Clothing("3","t-shirt-1", 1200, 1, 20);
         Clothing c2 = new Clothing("4","t-shirt-2", 1200, 1, 40);
-        inventory.addItem(c1);
-        inventory.addItem(c2);
+        ClothingInventory.addItem(c1);
+        ClothingInventory.addItem(c2);
 
 
         System.out.println("________________________________________");
-        ArrayList<Clothing> clothingInventory = inventory.getAllItems();
+        ArrayList<Clothing> clothingInventory = ClothingInventory.getAllItems();
         for (Clothing clothing : clothingInventory) {
             System.out.println(clothing.getName());
         }
 
-        inventory.removeItem(c2);
+        ClothingInventory.removeItem(c2);
         System.out.println("________________________________________");
-        ArrayList<Clothing> clothingInventory2 = inventory.getAllItems();
+        ArrayList<Clothing> clothingInventory2 = ClothingInventory.getAllItems();
         for (Clothing clothing : clothingInventory2) {
             System.out.println(clothing.getName());
         }
 
         System.out.println("________________________________________");
-        System.out.println(inventory.getItem(c1).getName());
+        System.out.println(ClothingInventory.getItem(c1).getName());
+
+
+        Inventory<Electronic> ElectronicInventory = new Inventory<>();
+
+        Electronic e1 = new Electronic("3","iron", 1200, 1, 2);
+        Electronic e2 = new Electronic("4","tv", 1200, 1, 4);
+        ElectronicInventory.addItem(e1);
+        ElectronicInventory.addItem(e2);
+
+
+        System.out.println("________________________________________");
+        ArrayList<Electronic> electronicInventory = ElectronicInventory.getAllItems();
+        for (Electronic electronic : electronicInventory) {
+            System.out.println(electronic.getName());
+        }
+
+        ElectronicInventory.removeItem(e2);
+        System.out.println("________________________________________");
+        ArrayList<Electronic> electronicInventory2 = ElectronicInventory.getAllItems();
+        for (Electronic electronic : electronicInventory2) {
+            System.out.println(electronic.getName());
+        }
+
+        System.out.println("________________________________________");
+        System.out.println(ElectronicInventory.getItem(e1).getName());
+
+
+
+
     }
 }

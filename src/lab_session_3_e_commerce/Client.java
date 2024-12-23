@@ -3,6 +3,7 @@ package lab_session_3_e_commerce;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
+import java.util.LinkedList;
 
 public class Client {
 
@@ -52,8 +53,12 @@ public class Client {
 
         Electronic e1 = new Electronic("3","iron", 1200, 1, 2);
         Electronic e2 = new Electronic("4","tv", 1200, 1, 4);
+        Electronic e3 = new Electronic("5","led", 1200, 1, 2);
+        Electronic e4 = new Electronic("6","tube", 1200, 1, 4);
         ElectronicInventory.addItem(e1);
         ElectronicInventory.addItem(e2);
+        ElectronicInventory.addItem(e3);
+        ElectronicInventory.addItem(e4);
 
 
         System.out.println("________________________________________");
@@ -62,7 +67,7 @@ public class Client {
             System.out.println(electronic.getName());
         }
 
-        ElectronicInventory.removeItem(e2);
+//        ElectronicInventory.removeItem(e2);
         System.out.println("________________________________________");
         ArrayList<Electronic> electronicInventory2 = ElectronicInventory.getAllItems();
         for (Electronic electronic : electronicInventory2) {
@@ -71,7 +76,25 @@ public class Client {
 
         System.out.println("________________________________________");
         System.out.println(ElectronicInventory.getItem(e1).getName());
+        System.out.println(ElectronicInventory.getItem(e2).getName());
+        System.out.println(ElectronicInventory.getItem(e3).getName());
+        System.out.println(ElectronicInventory.getItem(e2).getName());
+        System.out.println(ElectronicInventory.getItem(e4).getName());
+        System.out.println("________________________________________");
+        System.out.println("________________________________________");
 
+
+        RecentlyViewedItems recentlyViewedItems = new RecentlyViewedItems();
+        recentlyViewedItems.addRecentlyViewedItems(e1);
+        recentlyViewedItems.addRecentlyViewedItems(e2);
+        recentlyViewedItems.addRecentlyViewedItems(e3);
+        recentlyViewedItems.addRecentlyViewedItems(e4);
+        recentlyViewedItems.addRecentlyViewedItems(e2);
+        LinkedList<Item> recentlyVisited = recentlyViewedItems.getRecentlyViewedItems();
+
+        for (Item item : recentlyVisited) {
+            System.out.println(item.getName());
+        }
 
 
 

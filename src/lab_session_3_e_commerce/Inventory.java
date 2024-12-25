@@ -8,12 +8,10 @@ import java.util.LinkedList;
 public class Inventory <T extends Item> {
 
     HashMap<String,T> inventories;
-    LinkedList<String> recentlyViewedItems;
     int size = 0;
 
     public Inventory() {
         inventories = new HashMap<>();
-        recentlyViewedItems = new LinkedList<>();
     }
 
 
@@ -33,16 +31,29 @@ public class Inventory <T extends Item> {
     }
 
     public T getItem(T item) {
-        if( this.size == 3){
-            recentlyViewedItems.removeLast();
-            this.size--;
-        }
-        recentlyViewedItems.addFirst(item.getName());
-        this.size++;
         return inventories.get(item.getId());
     }
 
-    public LinkedList<String> getRecentlyViewedItems() {
-        return recentlyViewedItems;
+    public ArrayList<T> filterByPriceRange(double minPrice, double maxPrice) {
+        ArrayList<T> output = new ArrayList<>();
+        inventories.forEach((k, v)
+                -> {
+            if(v.getPrice() >= minPrice && v.getPrice() <= maxPrice){
+                output.add(v);
+            }
+        });
+        return output;
     }
+
+    public ArrayList<T> filterByAvailability() {
+        ArrayList<T> output = new ArrayList<>();
+        inventories.forEach((k, v)
+                -> {
+            if(v.getQuantity() > 0){
+                output.add(v);
+            }
+        });
+        return output;
+    }
+
 }

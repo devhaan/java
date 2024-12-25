@@ -1,6 +1,6 @@
 package lab_session_3_e_commerce;
 
-public class Item implements Comparable<Item> {
+public class Item{
 
     String id;
     String name;
@@ -43,12 +43,5 @@ public class Item implements Comparable<Item> {
     }
     public void setQuantity(int quantity) {
         this.quantity = quantity;
-    }
-
-
-
-    @Override
-    public int compareTo(Item other) {
-        return this.name.compareTo(other.getName());
     }
 }
